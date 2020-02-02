@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+
+{% block title %}
+Team Create
+{% endblock title %}
+{% block content %}
+
+
+<form action="{% url 'team-create' %}" method="POST">
+    {% csrf_token %}
+    {{form|crispy}}
+    <input type="submit" value="Create">
+
+
+</form>
+
+{% endblock content %}
